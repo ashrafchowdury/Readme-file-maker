@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-['Lexend_Deca'];
+  }
+  input,
+  textarea {
+    @apply !text-[16px] !mt-0;
+  }
+}
+@layer components {
+  .structure {
+    @apply w-[90%] sm:w-[550px] md:w-[750px] lg:w-[1050px] xl:w-[1450px] mx-auto flex;
+  }
+}
