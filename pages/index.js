@@ -1,14 +1,14 @@
 import Navbar from "../components/Navbar";
 import Editor from "../components/Editor";
-import Preview from "../components/Preview";
+import View from "../components/View";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="w-[95%] mx-auto flex">
+      <main className="w-[95%] mx-auto flex border">
         <Editor />
-        <Preview />
+        <View />
       </main>
     </>
   );

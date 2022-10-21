@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import { Button } from "evergreen-ui";
 
 const Preview = () => {
-  return (
-    <section className=' w-[40%] border'>
+  return <section className=" w-full"></section>;
+};
 
-    </section>
-  )
-}
-
-export default Preview
+export default Preview;

@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/************ Custom scroll bar *************/
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  background: linear-gradient(30deg, #7978FF 0%, #FF0063 130.6%);
+  border-radius: 4px;
+}
+
 @layer base {
   * {
     @apply font-['Lexend_Deca'];
@@ -15,4 +29,13 @@
   .structure {
     @apply w-[90%] sm:w-[550px] md:w-[750px] lg:w-[1050px] xl:w-[1450px] mx-auto flex;
   }
+}
+
+.logo{
+  background: linear-gradient(270deg, #7978FF 0%, #FF0063 130.6%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+
 }

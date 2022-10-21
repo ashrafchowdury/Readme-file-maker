@@ -8,10 +8,15 @@ export default function Document() {
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      
-       {/** Body **/}
+
+        {/** Body **/}
         <link
           href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+        {/** Logo **/}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
           rel="stylesheet"
         />
         {/**************** Font Awesome CDN **********/}

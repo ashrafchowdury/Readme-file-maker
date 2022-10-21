@@ -1,52 +1,93 @@
 import React, { useState } from "react";
-import { SegmentedControl } from "evergreen-ui";
+import Align from "./Align";
 import { Input, TextArea, Taginput } from "./Input";
 
 const Editor = () => {
-  const [options] = useState([
-    {
-      label: <i className="fa-solid fa-align-left p-1 text-lg"></i>,
-      value: "left",
-    },
-    {
-      label: <i className="fa-solid fa-align-center p-1 text-lg"></i>,
-      value: "center",
-    },
-    {
-      label: <i className="fa-solid fa-align-right p-1 text-lg"></i>,
-      value: "right",
-    },
-  ]);
-  const [value, setValue] = useState("left");
+  const [field, setfield] = useState({
+    image: "",
+    title: "",
+    link: "",
+    project: "",
+    about: "",
+  });
+  const [tools, settools] = useState(["Javascript", "React.js"]);
+  const [features, setfeatures] = useState(["Responsive", "Dark Mood"]);
+  const [social, setsocial] = useState(["Twitter", "Instagram"]);
+
+  let value, name;
+  const handleChange = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+    setfield({ ...field, [name]: value });
+  };
 
   return (
-    <section className=" w-[60%] h-full border relative">
-      <nav className=" w-full h-[70px] px-8 border flex items-center justify-between">
+    <section className=" w-[60%] h-full border-r relative">
+      <nav className=" w-full h-[70px] px-8 border-b flex items-center justify-between">
         <p>Editor</p>
-
-        <SegmentedControl
-          options={options}
-          value={value}
-          onChange={(value) => setValue(value)}
-        />
+        <Align />
       </nav>
-      <section className="  flex-col space-y-10 p-8">
-        <Input name="Image URL" title="Drop Your Image URL" />
+      <section className="  flex-col items-center justify-center space-y-10 p-8">
+        <Input
+          title="Image URL"
+          place="Drop Your Image URL"
+          change={handleChange}
+          value={field.image}
+          name="image"
+        />
 
         <div className=" w-full">
-          <div className=" w-full flex">
-            <Input name="Project Name" title="Drop Your Image URL" />
-            <Input name="Website Link" title="Drop Your Image URL" />
+          <div className=" w-full flex space-x-5">
+            <Input
+              title="Project Name"
+              place="Drop Your Image URL"
+              change={handleChange}
+              value={field.title}
+              name="title"
+            />
+            <Input
+              title="Website Link"
+              place="Drop Your Image URL"
+              change={handleChange}
+              value={field.link}
+              name="link"
+            />
           </div>
-          <TextArea title="About Project ..." />
+          <TextArea
+            place="About Project ..."
+            change={handleChange}
+            value={field.project}
+            name="project"
+          />
         </div>
 
-        <Taginput name="Use To Build" title="Drop Your Image URL" />
-        <Taginput name="Features" title="Drop Your Image URL" />
+        <Taginput
+          title="Use To Build"
+          place="Drop Your Image URL"
+          value={tools}
+          setvalue={settools}
+        />
+        <Taginput
+          title="Features"
+          place="Drop Your Image URL"
+          value={features}
+          setvalue={setfeatures}
+        />
 
-        <TextArea name="About Me" title="About Me ..." />
+        <TextArea
+          title="About Me"
+          place="About Me ..."
+          change={handleChange}
+          value={field.about}
+          name="about"
+        />
 
-        <Taginput name="Image URL" title="Drop Your Image URL" />
+        <Taginput
+          title="Image URL"
+          place="Drop Your Image URL"
+          value={social}
+          setvalue={setsocial}
+        />
       </section>
     </section>
   );

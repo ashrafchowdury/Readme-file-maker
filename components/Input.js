@@ -1,41 +1,45 @@
 import React, { useState } from "react";
 import { TextInput, Textarea, TagInput } from "evergreen-ui";
 
-export const Input = ({ name, title, size }) => {
-  console.log(TextInput);
+export const Input = ({ name, place, title, size, change, value }) => {
   return (
-    <div>
-      <p className=" text-lg mb-2 font-medium">{name}</p>
+    <div className={`${!size ? "w-full" : "w-[50%]"}`}>
+      <p className=" text-lg mb-2 font-medium ">{title}</p>
       <TextInput
-        width={!size ? "100%" : "50%"}
-        height="50px"
-        name="text-input-name"
-        placeholder={title}
+        className={`${!size ? "!w-full" : "!w-[50%]"} !h-[50px] !px-5`}
+        name={name}
+        placeholder={place}
+        onChange={change}
+        value={value}
       />
     </div>
   );
 };
 
-export const TextArea = ({ name, title }) => {
+export const TextArea = ({ name, title, change, place }) => {
   return (
     <>
-      <p className=" text-lg !mb-2 font-medium">{name}</p>
-      <Textarea name="textarea-1" placeholder={title} className=" h-[150px]" />
+      <p className=" text-lg !mb-2 font-medium">{title}</p>
+      <Textarea
+        name={name}
+        placeholder={place}
+        className=" !h-[150px] !p-5"
+        onChange={change}
+      />
     </>
   );
 };
 
-export const Taginput = ({ name, title }) => {
-  const [values, setValues] = useState(["Kauri", "Willow"]);
+export const Taginput = ({ title, place, value, setvalue }) => {
   return (
     <>
-      <p className=" text-lg !mb-2 font-medium">{name}</p>
+      <p className=" text-lg !mb-2 font-medium">{title}</p>
       <TagInput
-        inputProps={{ placeholder: "Add trees..." }}
-        values={values}
+        inputProps={{ placeholder: place }}
+        values={value}
         className=" !mt-0 pt-0 w-full h-[50px]"
-        onChange={(values) => {
-          setValues(values);
+        onChange={(value) => {
+          setvalue(value);
         }}
       />
     </>
