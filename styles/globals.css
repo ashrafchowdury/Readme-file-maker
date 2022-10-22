@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /************ Custom scroll bar *************/
 body::-webkit-scrollbar {
   width: 8px;
@@ -12,7 +11,7 @@ body::-webkit-scrollbar-track {
 }
 body::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255);
-  background: linear-gradient(30deg, #7978FF 0%, #FF0063 130.6%);
+  background: linear-gradient(30deg, #7978ff 0%, #ff0063 130.6%);
   border-radius: 4px;
 }
 
@@ -24,6 +23,9 @@ body::-webkit-scrollbar-thumb {
   textarea {
     @apply !text-[16px] !mt-0;
   }
+  .row h1 {
+    @apply text-5xl;
+  }
 }
 @layer components {
   .structure {
@@ -31,11 +33,10 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.logo{
-  background: linear-gradient(270deg, #7978FF 0%, #FF0063 130.6%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
-
+.logo {
+  background: linear-gradient(270deg, #7978ff 0%, #ff0063 130.6%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
