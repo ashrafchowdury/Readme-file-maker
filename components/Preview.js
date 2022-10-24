@@ -1,5 +1,5 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 import { useData } from "../context/data_context";
 
 const Preview = () => {
@@ -17,9 +17,6 @@ const Preview = () => {
 
       <h2>About Me</h2>
       <p>{field.about}</p>
-      {/* <ReactMarkdown>
-        {`${field.image}`}
-      </ReactMarkdown> */}
     </section>
   );
 };
