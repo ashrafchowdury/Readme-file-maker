@@ -1,21 +1,27 @@
 import React, { useState } from "react";
-import { SegmentedControl } from "evergreen-ui";
+import {
+  SegmentedControl,
+  AlignmentLeftIcon,
+  AlignmentVerticalCenterIcon,
+  AlignmentRightIcon,
+} from "evergreen-ui";
+import { useData } from "../context/data_context";
 const Align = () => {
   const [options] = useState([
     {
-      label: <i className="fa-solid fa-align-left p-1 text-lg"></i>,
+      label: <AlignmentLeftIcon size={18} className=" my-2" />,
       value: "left",
     },
     {
-      label: <i className="fa-solid fa-align-center p-1 text-lg"></i>,
+      label: <AlignmentVerticalCenterIcon size={18} className=" my-2" />,
       value: "center",
     },
     {
-      label: <i className="fa-solid fa-align-right p-1 text-lg"></i>,
+      label: <AlignmentRightIcon size={18} className=" my-2" />,
       value: "right",
     },
   ]);
-  const [align, setalign] = useState("left");
+  const { align, setalign } = useData();
   return (
     <>
       <SegmentedControl

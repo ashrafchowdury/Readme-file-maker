@@ -23,10 +23,25 @@ body::-webkit-scrollbar-thumb {
   textarea {
     @apply !text-[16px] !mt-0;
   }
-  .row h1 {
-    @apply text-5xl;
+}
+@layer base {
+  .preview {
+    @apply p-4;
+  }
+  .preview .line {
+    @apply my-3 w-full h-[1px] bg-gray-200;
+  }
+  .preview h1 {
+    @apply text-[32px] mt-3 font-semibold text-gray-800;
+  }
+  .preview h2 {
+    @apply text-2xl mt-7 font-semibold text-gray-800;
+  }
+  .preview li {
+    @apply text-[18px] my-2;
   }
 }
+
 @layer components {
   .structure {
     @apply w-[90%] sm:w-[550px] md:w-[750px] lg:w-[1050px] xl:w-[1450px] mx-auto flex;
