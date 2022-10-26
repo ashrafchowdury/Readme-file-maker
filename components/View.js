@@ -24,7 +24,7 @@ ${tools.map((val) => {
   src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/${val}-colored.svg"
   width="50px"
 />
-</a>&nbsp;
+</a>&nbsp
   `;
 })}
 
@@ -36,7 +36,7 @@ ${tools.map((val) => {
 <ul align="${align}">
 ${features.map((value) => `<li>${value}</li>`)}
 </ul>
-  
+
 <br />
   
 <h2 align="${align}">👦 About Me</h2>
@@ -86,7 +86,11 @@ ${features.map((value) => `<li>${value}</li>`)}
           Download
         </Button>
       </nav>
-      {view == "preview" ? <Preview /> : <Raw schema={schema} />}
+      {view == "preview" ? (
+        <Preview />
+      ) : (
+        <Raw schema={schema.replace(/,/g, "")} />
+      )}
     </article>
   );
 };

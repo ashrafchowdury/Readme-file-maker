@@ -5,7 +5,7 @@ export const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 
 const DataContextProvider = ({ children }) => {
-  const [tools, settools] = useState([]);
+  const [tools, settools] = useState(["javascript", "react", "firebase"]);
   const [features, setfeatures] = useState(["Responsive", "Dark Mood"]);
   const [social, setsocial] = useState(["Twitter", "Instagram"]);
   const [align, setalign] = useState("left");
