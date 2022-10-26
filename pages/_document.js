@@ -19,11 +19,11 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
           rel="stylesheet"
         />
-        {/**************** Font Awesome CDN **********/}
-        <script
-          src="https://kit.fontawesome.com/3e892a7f39.js"
-          crossorigin="anonymous"
-        ></script>
+
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
 
         <title>Create Readme.md file for your Projects</title>
         <meta

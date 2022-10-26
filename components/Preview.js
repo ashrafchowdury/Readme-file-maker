@@ -19,16 +19,20 @@ const Preview = () => {
 
       <br />
 
-      {tools.lenght > 0 && (
+      {tools && (
         <>
           <h2>🏗️ Use To Build</h2>
           <div className="line"></div>
-          <a href="https://github.com/" target="_blank">
-            <img
-              src="https://img.shields.io/badge/Javascript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black"
-              alt="javascript"
-            />
-          </a>
+          {tools?.map((val) => {
+            return (
+              <a href="https://github.com/" target="_blank" className=" m-2 inline-block">
+                <img
+                  src={`${`https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/${val}-colored.svg`}`}
+                  width="50px"
+                />
+              </a>
+            );
+          })}
         </>
       )}
 
@@ -36,7 +40,7 @@ const Preview = () => {
 
       {features && (
         <>
-          <h2>🏗️ Features</h2>
+          <h2>🚀 Features</h2>
           <div className="line"></div>
           {features.map((value) => {
             return <li>{value}</li>;
