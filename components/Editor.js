@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Align from "./Align";
-import { Input, TextArea, Taginput } from "./Input";
+
+import { Input, TextArea, Taginput, Socialinput } from "./Input";
 import { useData } from "../context/data_context";
+import { AddIcon } from "evergreen-ui";
 
 const Editor = () => {
   const {
@@ -22,11 +24,18 @@ const Editor = () => {
     setfield({ ...field, [name]: value });
   };
 
+  const handleSocialChange = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+    setsocial({ ...social, [name]: value });
+  };
+
   return (
     <>
       <section className=" w-[60%] h-full border-r relative">
         <nav className=" w-full h-[70px] px-8 border-b flex items-center justify-between">
           <p>Editor</p>
+
           <Align />
         </nav>
         <section className="  flex-col items-center justify-center space-y-10 p-8">
@@ -84,12 +93,25 @@ const Editor = () => {
             name="about"
           />
 
-          <Taginput
-            title="Image URL"
-            place="Drop Your Image URL"
-            value={social}
-            setvalue={setsocial}
-          />
+          <p className=" text-lg !mb-4 font-medium flex items-center">
+            Add Social Medias{" "}
+            <AddIcon
+              size={24}
+              className=" cursor-pointer ml-3 hover:text-[#ff0063] duration-500"
+            />
+          </p>
+
+          {social.map((value) => {
+            return (
+              <Socialinput
+                site="name"
+                link="link"
+                change={handleSocialChange}
+                Pvalue={social?.name}
+                Lvalue={social?.link}
+              />
+            );
+          })}
         </section>
       </section>
     </>

@@ -25,7 +25,11 @@ const Preview = () => {
           <div className="line"></div>
           {tools?.map((val) => {
             return (
-              <a href="https://github.com/" target="_blank" className=" m-2 inline-block">
+              <a
+                href="https://github.com/"
+                target="_blank"
+                className=" m-2 inline-block"
+              >
                 <img
                   src={`${`https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/${val}-colored.svg`}`}
                   width="50px"
@@ -57,6 +61,20 @@ const Preview = () => {
           <p>{field.about}</p>
         </>
       )}
+
+      <h2>🔗 Social Medias</h2>
+      <div className="line"></div>
+      <a
+        href="https://github.com/"
+        target="_blank"
+        className=" m-2 inline-block"
+      >
+        <img
+          src={`https://img.icons8.com/color/144/twitter`}
+          width="50px"
+        />
+      </a>
+
     </section>
   );
 };

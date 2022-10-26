@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import {
-  SegmentedControl,
   AlignmentLeftIcon,
   AlignmentVerticalCenterIcon,
   AlignmentRightIcon,
+  Tablist,
+  Tab,
+  Pane,
 } from "evergreen-ui";
 import { useData } from "../context/data_context";
-const Align = () => {
+
+
+
+ const Align = () => {
   const [options] = useState([
     {
       label: <AlignmentLeftIcon size={18} className=" my-2" />,
@@ -23,14 +28,26 @@ const Align = () => {
   ]);
   const { align, setalign } = useData();
   return (
-    <>
-      <SegmentedControl
-        options={options}
-        value={align}
-        onChange={(val) => setalign(val)}
-      />
-    </>
+    <div className="">
+      <Pane height={30}>
+        <Tablist>
+          {options.map((tab, index) => (
+            <Tab
+              key={tab.value}
+              id={tab.value}
+              onSelect={() => setalign(tab.value)}
+              isSelected={align === tab.value}
+              aria-controls={`panel-${tab}`}
+              paddingY={17}
+              margin={0}
+              className=" "
+            >
+              {tab.label}
+            </Tab>
+          ))}
+        </Tablist>
+      </Pane>
+    </div>
   );
 };
-
 export default Align;
