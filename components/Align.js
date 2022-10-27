@@ -9,9 +9,7 @@ import {
 } from "evergreen-ui";
 import { useData } from "../context/data_context";
 
-
-
- const Align = () => {
+const Align = () => {
   const [options] = useState([
     {
       label: <AlignmentLeftIcon size={18} className=" my-2" />,

@@ -2,7 +2,7 @@ import React from "react";
 import { useData } from "../context/data_context";
 
 const Preview = () => {
-  const { field, tools, align, features } = useData();
+  const { field, tools, align, features, platforms } = useData();
 
   return (
     <section
@@ -64,17 +64,16 @@ const Preview = () => {
 
       <h2>🔗 Social Medias</h2>
       <div className="line"></div>
-      <a
-        href="https://github.com/"
-        target="_blank"
-        className=" m-2 inline-block"
-      >
-        <img
-          src={`https://img.icons8.com/color/144/twitter`}
-          width="50px"
-        />
-      </a>
-
+      {platforms.map((val) => {
+        return (
+          <a href={val.link} target="_blank" className=" m-2 inline-block">
+            <img
+              src={`https://img.icons8.com/color/144/${val.name.toLowerCase()}`}
+              width="50px"
+            />
+          </a>
+        );
+      })}
     </section>
   );
 };

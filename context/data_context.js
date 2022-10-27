@@ -1,20 +1,16 @@
 import React, { useState, createContext, useContext } from "react";
 
 export const DataContext = createContext();
-
 export const useData = () => useContext(DataContext);
 
 const DataContextProvider = ({ children }) => {
   const [tools, settools] = useState(["javascript", "react", "firebase"]);
   const [features, setfeatures] = useState(["Responsive", "Dark Mood"]);
-  const [social, setsocial] = useState([
-    { twitter: "" },
-    { linkedin: "" },
-    { instagram: "" },
-    { github: "" },
-    { hashnode: "" },
-    { medium: "" },
-  ]);
+  const [social, setsocial] = useState({
+    platform: "",
+    link: "",
+  });
+  const [platforms, setplatforms] = useState([]);
   const [align, setalign] = useState("left");
   const [field, setfield] = useState({
     image: "",
@@ -36,6 +32,8 @@ const DataContextProvider = ({ children }) => {
     setsocial,
     align,
     setalign,
+    platforms,
+    setplatforms,
   };
   return (
     <>

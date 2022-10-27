@@ -13,8 +13,8 @@ const Editor = () => {
     settools,
     features,
     setfeatures,
-    social,
-    setsocial,
+    platforms,
+    setplatforms,
   } = useData();
 
   let value, name;
@@ -24,12 +24,11 @@ const Editor = () => {
     setfield({ ...field, [name]: value });
   };
 
-  const handleSocialChange = (e) => {
-    name = e.target.name;
-    value = e.target.value;
-    setsocial({ ...social, [name]: value });
+  const handleRemoveSocial = (name, num) => {
+    const update = platforms.splice(num, 1);
+    console.log(update);
+    // setplatforms(update);
   };
-
   return (
     <>
       <section className=" w-[60%] h-full border-r relative">
@@ -93,25 +92,25 @@ const Editor = () => {
             name="about"
           />
 
-          <p className=" text-lg !mb-4 font-medium flex items-center">
-            Add Social Medias{" "}
-            <AddIcon
-              size={24}
-              className=" cursor-pointer ml-3 hover:text-[#ff0063] duration-500"
-            />
-          </p>
-
-          {social.map((value) => {
-            return (
-              <Socialinput
-                site="name"
-                link="link"
-                change={handleSocialChange}
-                Pvalue={social?.name}
-                Lvalue={social?.link}
-              />
-            );
-          })}
+          <Socialinput />
+          <div className=" flex flex-wrap items-center flex-start">
+            {platforms.map((val, ind) => {
+              return (
+                <div className=" m-2 w-28 h-24 rounded border flex flex-col items-center justify-center relative overflow-hidden">
+                  <AddIcon
+                    size={20}
+                    onClick={() => handleRemoveSocial(val.name, ind)}
+                    className=" absolute top-2 right-2 rotate-45 cursor-pointer hover:text-[#ff0063] duration-300"
+                  />
+                  <img
+                    src={`https://img.icons8.com/color/144/${val.name.toLowerCase()}`}
+                    width="40px"
+                  />
+                  <p>{val.name}</p>
+                </div>
+              );
+            })}
+          </div>
         </section>
       </section>
     </>

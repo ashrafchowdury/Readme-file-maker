@@ -1,4 +1,5 @@
-import { TextInput, Textarea, TagInput } from "evergreen-ui";
+import { TextInput, Textarea, TagInput, PlusIcon, Button } from "evergreen-ui";
+import { useData } from "../context/data_context";
 
 export const Input = ({ name, place, title, size, change, value }) => {
   return (
@@ -45,23 +46,51 @@ export const Taginput = ({ title, place, value, setvalue }) => {
   );
 };
 
-export const Socialinput = ({ change, site, link, Pvalue, Lvalue }) => {
+export const Socialinput = () => {
+  const { social, setsocial, platforms, setplatforms } = useData();
+  let value, name;
+  const handleSocial = (e) => {
+    name = e.target.name;
+    value = e.target.value;
+    setsocial({ ...social, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!social.platform && !social.link) {
+      null;
+    } else {
+      setplatforms([
+        ...platforms,
+        { name: social.platform, link: social.link },
+      ]);
+      setsocial({
+        platform: "",
+        link: "",
+      });
+    }
+  };
   return (
     <>
-      <TextInput
-        className={`!w-[20%] !h-[50px] !px-5 mr-3 !mb-3`}
-        name={site}
-        placeholder="Platform Name"
-        value={Pvalue}
-        onChange={change}
-      />
-      <TextInput
-        className={`!w-[78.5%] !h-[50px] !px-5 !mb-3`}
-        name={link}
-        placeholder="Account Link"
-        value={Lvalue}
-        onChange={change}
-      />
+      <p className=" text-lg font-medium ">Add Social Medias</p>
+      <form onSubmit={handleSubmit} className=" flex items-center">
+        <TextInput
+          className={`!w-[20%] !h-[50px] !px-5 `}
+          placeholder="Paltform"
+          value={social.platform}
+          name="platform"
+          onChange={handleSocial}
+        />
+        <TextInput
+          className={`!w-[75%] !h-[50px] !px-5  mx-3`}
+          name="link"
+          placeholder="Account Link"
+          value={social.link}
+          onChange={handleSocial}
+        />
+        <Button paddingY={23} paddingX={10}>
+          <PlusIcon size={28} />
+        </Button>
+      </form>
     </>
   );
 };

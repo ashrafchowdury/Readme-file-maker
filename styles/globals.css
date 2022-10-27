@@ -29,7 +29,7 @@ body::-webkit-scrollbar-thumb {
     @apply p-4;
   }
   .preview .line {
-    @apply my-3 w-full h-[1px] bg-gray-200;
+    @apply my-2 w-full h-[1px] bg-gray-200;
   }
   .preview h1 {
     @apply text-[32px] mt-3 font-semibold text-gray-800;
