@@ -6,14 +6,16 @@ import { useData } from "../context/data_context";
 
 const View = () => {
   const [view, setview] = useState("preview");
-  const { field, features, tools, align } = useData();
+  const { field, features, tools, align, platforms } = useData();
 
   const schema = `
 <img src="${field.image}" alt="${field.title}" />
 <h1 align="${align}">${field.title}</h1>
 <p align="${align}">${field.project}</p>
   
+
 <br />
+
   
 <h2 align="${align}">🏗️ Use To Build</h2>
 <div align="${align}">
@@ -30,24 +32,45 @@ ${tools.map((val) => {
 
 </div>
   
+
 <br />
   
+
 <h2 align="${align}">🚀 Features</h2>
 <ul align="${align}">
 ${features.map((value) => `<li>${value}</li>`)}
 </ul>
 
+
 <br />
   
+
 <h2 align="${align}">👦 About Me</h2>
 <p align="${align}">${field.project}</p>
+
+
+<br />
+
+
+<h2 align="${align}">🔗 Social Medias</h2>
+<div align="${align}">
+${platforms.map((val) => {
+  return `
+<a href="${val.link}" target="_blank">
+<img
+  src="https://img.icons8.com/color/144/${val.name.toLowerCase()}"
+  width="50px"
+/>
+</a>&nbsp
+  `;
+})}
 `;
 
   //download file
   const downloadMarkdownFile = () => {
     try {
       const a = document.createElement("a");
-      const blob = new Blob([schema]);
+      const blob = new Blob([schema.replace(/,/g, "")]);
       a.href = URL.createObjectURL(blob);
       a.download = "Readme.md";
       a.click();

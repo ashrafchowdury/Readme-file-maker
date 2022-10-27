@@ -1,4 +1,11 @@
-import { TextInput, Textarea, TagInput, PlusIcon, Button } from "evergreen-ui";
+import {
+  TextInput,
+  Textarea,
+  TagInput,
+  PlusIcon,
+  toaster,
+  Button,
+} from "evergreen-ui";
 import { useData } from "../context/data_context";
 
 export const Input = ({ name, place, title, size, change, value }) => {
@@ -57,7 +64,7 @@ export const Socialinput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!social.platform && !social.link) {
-      null;
+      toaster.warning("Filup All the Fields");
     } else {
       setplatforms([
         ...platforms,

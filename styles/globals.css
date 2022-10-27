@@ -3,21 +3,24 @@
 @tailwind utilities;
 
 /************ Custom scroll bar *************/
-body::-webkit-scrollbar {
-  width: 8px;
+*::-webkit-scrollbar {
+  width: 6px;
 }
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background-color: transparent;
 }
-body::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 255, 255);
-  background: linear-gradient(30deg, #7978ff 0%, #ff0063 130.6%);
+*::-webkit-scrollbar-thumb {
+  background-color: #EBF0FF;
+  /* background: linear-gradient(30deg, #7978ff 0%, #ffeef4 130.6%); */
   border-radius: 4px;
 }
 
 @layer base {
   * {
     @apply font-['Lexend_Deca'];
+  }
+  body{
+    @apply overflow-hidden;
   }
   input,
   textarea {

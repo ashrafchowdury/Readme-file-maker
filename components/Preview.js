@@ -6,7 +6,7 @@ const Preview = () => {
 
   return (
     <section
-      className={`preview w-full ${align == "center" && "text-center"} ${
+      className={`preview w-full h-[82vh] overflow-y-auto border-l ${align == "center" && "text-center"} ${
         align == "right" && "text-right"
       }`}
     >
@@ -61,6 +61,8 @@ const Preview = () => {
           <p>{field.about}</p>
         </>
       )}
+
+      <br />
 
       <h2>🔗 Social Medias</h2>
       <div className="line"></div>

@@ -31,7 +31,7 @@ const Editor = () => {
   };
   return (
     <>
-      <section className=" w-[60%] h-full border-r relative">
+      <section className=" w-[60%] h-[82vh] relative overflow-y-auto">
         <nav className=" w-full h-[70px] px-8 border-b flex items-center justify-between">
           <p>Editor</p>
 
