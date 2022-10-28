@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Align from "./Align";
-
 import { Input, TextArea, Taginput, Socialinput } from "./Input";
 import { useData } from "../context/data_context";
-import { AddIcon } from "evergreen-ui";
+import { AddIcon, CrossIcon } from "evergreen-ui";
 
 const Editor = () => {
   const {
@@ -29,11 +28,33 @@ const Editor = () => {
     console.log(update);
     // setplatforms(update);
   };
+
+  const handleReset = () => {
+    settools([]);
+    setfeatures([]);
+    setplatforms([]);
+    setfield({
+      image: "",
+      title: "",
+      link: "",
+      project: "",
+      about: "",
+    });
+  };
   return (
     <>
-      <section className=" w-[60%] h-[82vh] relative overflow-y-auto">
+      <section className=" w-[60%] h-[89vh] overflow-y-auto border-r">
         <nav className=" w-full h-[70px] px-8 border-b flex items-center justify-between">
-          <p>Editor</p>
+          {!field.title ? (
+            <p>Editor</p>
+          ) : (
+            <p
+              className=" cursor-pointer font-medium flex items-center"
+              onClick={handleReset}
+            >
+              <CrossIcon size={16} marginRight={5} /> Reset
+            </p>
+          )}
 
           <Align />
         </nav>

@@ -6,7 +6,7 @@ const Raw = ({ schema }) => {
     toaster.success("Copied Successfully");
   };
   return (
-    <section className="relative w-full break-words h-[82vh] overflow-y-auto border-l">
+    <section className="relative w-full break-words h-[82vh] overflow-y-auto">
       <div className=" absolute top-7 right-6">
         <Button className=" py-5 !px-3" onClick={handleCopy}>
           <DuplicateIcon size={18} />

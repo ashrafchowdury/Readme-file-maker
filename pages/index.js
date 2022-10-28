@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="w-[95%] mx-auto flex border">
+      <main className="w-[100%] mx-auto flex border">
         <Editor />
         <View />
       </main>

@@ -76,7 +76,7 @@ ${platforms.map((val) => {
       a.click();
       toaster.success("Download Successfully");
     } catch (error) {
-      console.log(error);
+      toaster.danger("Somethi nd was wrong!");
     }
   };
   return (

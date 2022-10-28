@@ -6,7 +6,7 @@ const Preview = () => {
 
   return (
     <section
-      className={`preview w-full h-[82vh] overflow-y-auto border-l ${align == "center" && "text-center"} ${
+      className={`preview w-full h-[82vh] overflow-y-auto  ${align == "center" && "text-center"} ${
         align == "right" && "text-right"
       }`}
     >

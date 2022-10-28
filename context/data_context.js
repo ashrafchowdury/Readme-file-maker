@@ -4,8 +4,8 @@ export const DataContext = createContext();
 export const useData = () => useContext(DataContext);
 
 const DataContextProvider = ({ children }) => {
-  const [tools, settools] = useState(["javascript", "react", "firebase"]);
-  const [features, setfeatures] = useState(["Responsive", "Dark Mood"]);
+  const [tools, settools] = useState([]);
+  const [features, setfeatures] = useState([]);
   const [social, setsocial] = useState({
     platform: "",
     link: "",

@@ -78,8 +78,8 @@ export const Socialinput = () => {
   };
   return (
     <>
-      <p className=" text-lg font-medium ">Add Social Medias</p>
-      <form onSubmit={handleSubmit} className=" flex items-center">
+      <p className=" text-lg !mb-2 font-medium">Add Social Medias</p>
+      <form onSubmit={handleSubmit} className=" flex items-center !mt-0">
         <TextInput
           className={`!w-[20%] !h-[50px] !px-5 `}
           placeholder="Paltform"
