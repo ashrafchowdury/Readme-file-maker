@@ -7,7 +7,7 @@ import {
   Tab,
   Pane,
 } from "evergreen-ui";
-import { useData } from "../context/data_context";
+import { useData } from "../utils/hooks/useData";
 
 const Align = () => {
   const [options] = useState([

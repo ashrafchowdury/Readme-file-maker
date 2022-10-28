@@ -6,7 +6,7 @@ import {
   toaster,
   Button,
 } from "evergreen-ui";
-import { useData } from "../context/data_context";
+import { useData } from "../utils/hooks/useData";
 
 export const Input = ({ name, place, title, size, change, value }) => {
   return (
@@ -23,7 +23,7 @@ export const Input = ({ name, place, title, size, change, value }) => {
   );
 };
 
-export const TextArea = ({ name, title, change, place }) => {
+export const TextArea = ({ name, title, change, place, value }) => {
   return (
     <>
       <p className=" text-lg !mb-2 font-medium">{title}</p>
@@ -32,6 +32,7 @@ export const TextArea = ({ name, title, change, place }) => {
         placeholder={place}
         className=" !h-[150px] !p-5 !leading-7"
         onChange={change}
+        value={value}
       />
     </>
   );

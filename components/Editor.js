@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import Align from "./Align";
 import { Input, TextArea, Taginput, Socialinput } from "./Input";
-import { useData } from "../context/data_context";
-import { AddIcon, CrossIcon } from "evergreen-ui";
+import { useData } from "../utils/hooks/useData";
+import { AddIcon, CrossIcon, SideSheet, Button } from "evergreen-ui";
+import View from "./View";
+import { useDisplay } from "../utils/hooks/useDisplay";
 
 const Editor = () => {
+  const [isShown, setIsShown] = React.useState(false);
+  const { display } = useDisplay();
   const {
     field,
     setfield,
@@ -50,7 +54,7 @@ const Editor = () => {
           ) : (
             <p
               className=" cursor-pointer font-medium flex items-center"
-              onClick={handleReset}
+              onClick={() => handleReset()}
             >
               <CrossIcon size={16} marginRight={5} /> Reset
             </p>
@@ -71,14 +75,14 @@ const Editor = () => {
             <div className=" w-full flex space-x-5">
               <Input
                 title="Project Name"
-                place="Drop Your Image URL"
+                place="Type Your Project Name Here "
                 change={handleChange}
                 value={field.title}
                 name="title"
               />
               <Input
                 title="Website Link"
-                place="Drop Your Image URL"
+                place="Drop Your Site URL Here"
                 change={handleChange}
                 value={field.link}
                 name="link"
@@ -94,13 +98,13 @@ const Editor = () => {
 
           <Taginput
             title="Use To Build"
-            place="Drop Your Image URL"
+            place="Add Languages And Framworks"
             value={tools}
             setvalue={settools}
           />
           <Taginput
             title="Features"
-            place="Drop Your Image URL"
+            place="Add Features"
             value={features}
             setvalue={setfeatures}
           />
@@ -132,6 +136,25 @@ const Editor = () => {
               );
             })}
           </div>
+
+          {display == true ? null : (
+            <>
+              <SideSheet
+                isShown={isShown}
+                onCloseComplete={() => setIsShown(false)}
+              >
+                <main className="w-[100%] ">
+                  <View />
+                </main>
+              </SideSheet>
+              <Button
+                onClick={() => setIsShown(true)}
+                className=" w-full py-6 !text-[16px] !text-white !bg-[#FF0063] !border-none"
+              >
+                Show Basic Side Sheet
+              </Button>
+            </>
+          )}
         </section>
       </section>
     </>

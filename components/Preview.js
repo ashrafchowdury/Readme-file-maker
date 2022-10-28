@@ -1,25 +1,27 @@
 import React from "react";
-import { useData } from "../context/data_context";
+import { useData } from "../utils/hooks/useData";
 
 const Preview = () => {
   const { field, tools, align, features, platforms } = useData();
 
   return (
     <section
-      className={`preview w-full h-[82vh] overflow-y-auto  ${align == "center" && "text-center"} ${
-        align == "right" && "text-right"
-      }`}
+      className={`preview w-full h-[82vh] overflow-y-auto  ${
+        align == "center" && "text-center"
+      } ${align == "right" && "text-right"}`}
     >
       {field.image && <img src={field.image} alt="image" />}
       <h1>
-        <a href={field.link}>{field.title}</a>
+        <a href={field.link} target="_blank">
+          {field.title}
+        </a>
       </h1>
       {field.title && <div className="line"></div>}
       <p>{field.project}</p>
 
       <br />
 
-      {tools && (
+      {tools.length > 0 && (
         <>
           <h2>🏗️ Use To Build</h2>
           <div className="line"></div>
@@ -31,7 +33,7 @@ const Preview = () => {
                 className=" m-2 inline-block"
               >
                 <img
-                  src={`${`https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/${val}-colored.svg`}`}
+                  src={`${`https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/${val.toLowerCase()}-colored.svg`}`}
                   width="50px"
                 />
               </a>
@@ -42,7 +44,7 @@ const Preview = () => {
 
       <br />
 
-      {features && (
+      {features.length > 0 && (
         <>
           <h2>🚀 Features</h2>
           <div className="line"></div>
@@ -64,18 +66,22 @@ const Preview = () => {
 
       <br />
 
-      <h2>🔗 Social Medias</h2>
-      <div className="line"></div>
-      {platforms.map((val) => {
-        return (
-          <a href={val.link} target="_blank" className=" m-2 inline-block">
-            <img
-              src={`https://img.icons8.com/color/144/${val.name.toLowerCase()}`}
-              width="50px"
-            />
-          </a>
-        );
-      })}
+      {platforms.length > 0 && (
+        <>
+          <h2>🔗 Social Medias</h2>
+          <div className="line"></div>
+          {platforms.map((val) => {
+            return (
+              <a href={val.link} target="_blank" className=" m-2 inline-block">
+                <img
+                  src={`https://img.icons8.com/color/144/${val.name.toLowerCase()}`}
+                  width="50px"
+                />
+              </a>
+            );
+          })}
+        </>
+      )}
     </section>
   );
 };

@@ -1,18 +1,15 @@
 import React from "react";
-import { Switch } from "evergreen-ui";
+import { MoonIcon, LightbulbIcon, Button } from "evergreen-ui";
 
 const Navbar = () => {
-  const [checked, setChecked] = React.useState(false);
   return (
-    <nav className="w-[95%] mx-auto h-20 flex items-center justify-center">
-      <div className="logo text-4xl font-bold font-[Pacifico]">
+    <nav className="w-[97%] mx-auto h-20 flex items-center justify-between">
+      <div className="logo text-3xl font-bold font-[Pacifico]">
         Create{">"}Readme
       </div>
-      {/* <Switch
-        checked={checked}
-        onChange={(e) => setChecked(e.target.checked)}
-        height={20}
-      /> */}
+      <Button className=" py-4 !px-2">
+        <MoonIcon size={18} />
+      </Button>
     </nav>
   );
 };
