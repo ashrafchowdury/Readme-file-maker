@@ -49,15 +49,15 @@ const Editor = () => {
     <>
       <section className=" w-[60%] h-[89vh] overflow-y-auto border-r">
         <nav className=" w-full h-[70px] px-8 border-b flex items-center justify-between">
-          {!field.title ? (
-            <p>Editor</p>
-          ) : (
+          {field.title || field.image ? (
             <p
               className=" cursor-pointer font-medium flex items-center"
               onClick={() => handleReset()}
             >
               <CrossIcon size={16} marginRight={5} /> Reset
             </p>
+          ) : (
+            <p>Editor</p>
           )}
 
           <Align />

@@ -78,7 +78,7 @@ ${platforms.map((val) => {
 `
 }
 
-`.replace(/,/g, ""); //  /,/g means remove , from everywhere and /g means global
+`.replace(/,/g, "").replace(/false/g, ""); //  /,/g means remove , from everywhere and /g means global
 
   return { schema };
 };

@@ -4,9 +4,11 @@ import Preview from "./Preview";
 import Raw from "./Raw";
 import { useSchema } from "../utils/hooks/useSchema";
 import { downloadFile } from "../utils/functions/download";
+import { useData } from "../utils/hooks/useData";
 
 const View = () => {
   const [view, setview] = useState("preview");
+  const { field, features, tools, align, platforms } = useData();
   const { schema } = useSchema();
 
   return (
@@ -31,14 +33,16 @@ const View = () => {
             raw
           </Button>
         </div>
-        <Button
-          marginRight={16}
-          appearance="primary"
-          className=" !text-[16px] !h-[40px] capitalize !bg-[#FF0063] !border-none"
-          onClick={() => downloadFile(schema)}
-        >
-          Download
-        </Button>
+        {(field.title || field.image) && (
+          <Button
+            marginRight={16}
+            appearance="primary"
+            className=" !text-[16px] !h-[40px] capitalize !bg-[#FF0063] !border-none"
+            onClick={() => downloadFile(schema)}
+          >
+            Download
+          </Button>
+        )}
       </nav>
       {view == "preview" ? <Preview /> : <Raw schema={schema} />}
     </article>
