@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "evergreen-ui": "^6.10.5",
-    "markdown-to-jsx": "^7.1.7",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"

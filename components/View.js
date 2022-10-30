@@ -8,7 +8,7 @@ import { useData } from "../utils/hooks/useData";
 
 const View = () => {
   const [view, setview] = useState("preview");
-  const { field, features, tools, align, platforms } = useData();
+  const { field } = useData();
   const { schema } = useSchema();
 
   return (

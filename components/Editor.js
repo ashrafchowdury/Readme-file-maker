@@ -28,9 +28,10 @@ const Editor = () => {
   };
 
   const handleRemoveSocial = (name, num) => {
-    const update = platforms.splice(num, 1);
-    console.log(update);
+    // const update = platforms.splice(num, 1);
+    // console.log(update);
     // setplatforms(update);
+    return null
   };
 
   const handleReset = () => {
@@ -137,9 +138,7 @@ const Editor = () => {
             })}
           </div>
 
-          {display == true ? null : (
-            <>
-              <SideSheet
+          {/* <SideSheet
                 isShown={isShown}
                 onCloseComplete={() => setIsShown(false)}
               >
@@ -152,9 +151,7 @@ const Editor = () => {
                 className=" w-full py-6 !text-[16px] !text-white !bg-[#FF0063] !border-none"
               >
                 Show Basic Side Sheet
-              </Button>
-            </>
-          )}
+              </Button> */}
         </section>
       </section>
     </>
