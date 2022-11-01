@@ -28,10 +28,10 @@ const Editor = () => {
   };
 
   const handleRemoveSocial = (name, num) => {
-    // const update = platforms.splice(num, 1);
-    // console.log(update);
-    // setplatforms(update);
-    return null
+    const update = platforms.filter((val) => {
+      return val.name != name;
+    });
+    setplatforms(update);
   };
 
   const handleReset = () => {
