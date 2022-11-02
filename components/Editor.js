@@ -49,7 +49,7 @@ const Editor = () => {
   return (
     <>
       <section
-        className={` ${
+        className={`anime ${
           display == false ? "w-full" : "w-[60%]"
         } h-[89vh] overflow-y-auto border-r`}
       >

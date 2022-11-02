@@ -14,7 +14,7 @@ const View = () => {
   const { display } = useDisplay();
 
   return (
-    <article className={` ${display == false ? "w-full" : "w-[40%]"}`}>
+    <article className={`anime1 ${display == false ? "w-full" : "w-[40%]"}`}>
       <nav className=" w-full h-[70px] pl-8 border-b flex items-center justify-between">
         <div>
           <Button

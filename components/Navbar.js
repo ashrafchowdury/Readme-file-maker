@@ -3,7 +3,7 @@ import { MoonIcon, LightbulbIcon, Button } from "evergreen-ui";
 
 const Navbar = () => {
   return (
-    <nav className="w-[97%] mx-auto h-16 lg:h-20 flex items-center justify-center">
+    <nav className="nav_anime w-[97%] mx-auto h-16 lg:h-20 flex items-center justify-center">
       <div className=" relative">
         <span className="logo text-2xl lg:text-3xl font-bold font-[Pacifico]">
           Create{">"}Readme

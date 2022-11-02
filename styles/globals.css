@@ -10,7 +10,7 @@
   background-color: transparent;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #EBF0FF;
+  background-color: #ebf0ff;
   /* background: linear-gradient(30deg, #7978ff 0%, #ffeef4 130.6%); */
   border-radius: 4px;
 }
@@ -19,7 +19,7 @@
   * {
     @apply font-['Lexend_Deca'];
   }
-  body{
+  body {
     @apply overflow-hidden;
   }
   input,
@@ -57,4 +57,44 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+@keyframes nav_anime {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.nav_anime {
+  animation: nav_anime 1.5s ease;
+}
+@keyframes anime {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes anime1 {
+  0% {
+    transform: translateX(150px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+.anime {
+  animation: anime 1.5s ease;
+}
+.anime1 {
+  animation: anime1 1.5s ease;
 }
