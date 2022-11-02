@@ -27,7 +27,7 @@ const Editor = () => {
     setfield({ ...field, [name]: value });
   };
 
-  const handleRemoveSocial = (name, num) => {
+  const handleRemoveSocial = (name) => {
     const update = platforms.filter((val) => {
       return val.name != name;
     });
@@ -48,8 +48,12 @@ const Editor = () => {
   };
   return (
     <>
-      <section className=" w-[60%] h-[89vh] overflow-y-auto border-r">
-        <nav className=" w-full h-[70px] px-8 border-b flex items-center justify-between">
+      <section
+        className={` ${
+          display == false ? "w-full" : "w-[60%]"
+        } h-[89vh] overflow-y-auto border-r`}
+      >
+        <nav className=" w-full h-[70px] px-3 lg:px-8 border-b flex items-center justify-between">
           {field.title || field.image ? (
             <p
               className=" cursor-pointer font-medium flex items-center"
@@ -63,7 +67,7 @@ const Editor = () => {
 
           <Align />
         </nav>
-        <section className="  flex-col items-center justify-center space-y-10 p-8">
+        <section className="  flex-col items-center justify-center space-y-10 py-5 px-3 lg:p-8">
           <Input
             title="Image URL"
             place="Drop Your Image URL"
@@ -76,7 +80,7 @@ const Editor = () => {
             <div className=" w-full flex space-x-5">
               <Input
                 title="Project Name"
-                place="Type Your Project Name Here "
+                place="Project Name"
                 change={handleChange}
                 value={field.title}
                 name="title"
@@ -99,7 +103,7 @@ const Editor = () => {
 
           <Taginput
             title="Use To Build"
-            place="Add Languages And Framworks"
+            place="Add Languages And Frameworks"
             value={tools}
             setvalue={settools}
           />
@@ -120,38 +124,43 @@ const Editor = () => {
 
           <Socialinput />
           <div className=" flex flex-wrap items-center flex-start">
-            {platforms.map((val, ind) => {
+            {platforms.map((val) => {
               return (
-                <div className=" m-2 w-28 h-24 rounded border flex flex-col items-center justify-center relative overflow-hidden">
+                <div className=" m-1 lg:m-2 w-[90px] lg:w-28 h-20 lg:h-24 rounded border flex flex-col items-center justify-center relative overflow-hidden">
                   <AddIcon
                     size={20}
-                    onClick={() => handleRemoveSocial(val.name, ind)}
+                    onClick={() => handleRemoveSocial(val.name)}
                     className=" absolute top-2 right-2 rotate-45 cursor-pointer hover:text-[#ff0063] duration-300"
                   />
                   <img
                     src={`https://img.icons8.com/color/144/${val.name.toLowerCase()}`}
-                    width="40px"
+                    className="w-[30px] lg:w-[40px]"
                   />
-                  <p>{val.name}</p>
+                  <p className="text-sm  lg:text-[16px]">{val.name}</p>
                 </div>
               );
             })}
           </div>
 
-          {/* <SideSheet
+          {display == false && (
+            <>
+              <SideSheet
                 isShown={isShown}
                 onCloseComplete={() => setIsShown(false)}
+                position="right"
+                width="90vw"
               >
-                <main className="w-[100%] ">
-                  <View />
-                </main>
+                <View />
               </SideSheet>
+
               <Button
                 onClick={() => setIsShown(true)}
-                className=" w-full py-6 !text-[16px] !text-white !bg-[#FF0063] !border-none"
+                className=" w-full py-5 md:py-6 !text-[16px] !text-white !bg-[#FF0063] !border-none"
               >
-                Show Basic Side Sheet
-              </Button> */}
+                Preview
+              </Button>
+            </>
+          )}
         </section>
       </section>
     </>

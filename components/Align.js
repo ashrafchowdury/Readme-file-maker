@@ -8,19 +8,21 @@ import {
   Pane,
 } from "evergreen-ui";
 import { useData } from "../utils/hooks/useData";
+import { useDisplay } from "../utils/hooks/useDisplay";
 
 const Align = () => {
+  const { display } = useDisplay();
   const [options] = useState([
     {
-      label: <AlignmentLeftIcon size={18} className=" my-2" />,
+      label: <AlignmentLeftIcon size={16} className=" lg:text my-2" />,
       value: "left",
     },
     {
-      label: <AlignmentVerticalCenterIcon size={18} className=" my-2" />,
+      label: <AlignmentVerticalCenterIcon size={16} className=" my-2" />,
       value: "center",
     },
     {
-      label: <AlignmentRightIcon size={18} className=" my-2" />,
+      label: <AlignmentRightIcon size={16} className=" my-2" />,
       value: "right",
     },
   ]);
@@ -38,7 +40,6 @@ const Align = () => {
               aria-controls={`panel-${tab}`}
               paddingY={17}
               margin={0}
-              className=" "
             >
               {tab.label}
             </Tab>
