@@ -1,15 +1,15 @@
-import React from "react";
 import { useData } from "../utils/hooks/useData";
 
 const Preview = () => {
-  const { field, tools, align, features, platforms } = useData();
+  const { field, tools, align, features, platforms } = useData(); //get the input data
 
   return (
     <section
       className={`preview w-full h-[82vh] overflow-y-auto  ${
         align == "center" && "text-center"
-      } ${align == "right" && "text-right"}`}
+      } ${align == "right" && "text-right"}`} //Conditions for align the content
     >
+      {/*If the field.image is empty then hide the element*/}
       {field.image && <img src={field.image} alt="image" />}
       <h1>
         <a href={field.link} target="_blank">
@@ -21,6 +21,7 @@ const Preview = () => {
 
       <br />
 
+      {/*Condition for showing the elements*/}
       {tools.length > 0 && (
         <>
           <h2>🏗️ Use To Build</h2>
@@ -45,6 +46,7 @@ const Preview = () => {
 
       <br />
 
+      {/*Condition for showing the elements*/}
       {features.length > 0 && (
         <>
           <h2>🚀 Features</h2>
@@ -57,6 +59,7 @@ const Preview = () => {
 
       <br />
 
+      {/*Condition for showing the elements*/}
       {field.about && (
         <>
           <h2>👦 About Me</h2>
@@ -67,13 +70,19 @@ const Preview = () => {
 
       <br />
 
+      {/*Condition for showing the elements*/}
       {platforms.length > 0 && (
         <>
           <h2>🔗 Social Medias</h2>
           <div className="line"></div>
           {platforms.map((val, ind) => {
             return (
-              <a href={val.link} target="_blank" className=" m-2 inline-block" key={ind}>
+              <a
+                href={val.link}
+                target="_blank"
+                className=" m-2 inline-block"
+                key={ind}
+              >
                 <img
                   src={`https://img.icons8.com/color/144/${val.name.toLowerCase()}`}
                   width="50px"

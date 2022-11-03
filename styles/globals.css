@@ -11,7 +11,6 @@
 }
 *::-webkit-scrollbar-thumb {
   background-color: #ebf0ff;
-  /* background: linear-gradient(30deg, #7978ff 0%, #ffeef4 130.6%); */
   border-radius: 4px;
 }
 
@@ -27,6 +26,8 @@
     @apply !text-[16px] !mt-0;
   }
 }
+
+/* Style the Preview section */
 @layer base {
   .preview {
     @apply p-4;
@@ -45,12 +46,7 @@
   }
 }
 
-@layer components {
-  .structure {
-    @apply w-[90%] sm:w-[550px] md:w-[750px] lg:w-[1050px] xl:w-[1450px] mx-auto flex;
-  }
-}
-
+/*Add gradiant on the logo*/
 .logo {
   background: linear-gradient(270deg, #7978ff 0%, #ff0063 130.6%);
   -webkit-background-clip: text;
@@ -59,6 +55,7 @@
   text-fill-color: transparent;
 }
 
+/*Components animation*/
 @keyframes nav_anime {
   0% {
     transform: translateY(-100px);

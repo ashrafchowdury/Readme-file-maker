@@ -1,6 +1,8 @@
 import { DuplicateIcon, Button, toaster } from "evergreen-ui";
 
+//théRaw component is for show the raw HTML data 
 const Raw = ({ schema }) => {
+  //Copy the schema data
   const handleCopy = () => {
     navigator.clipboard.writeText(schema);
     toaster.success("Copied Successfully");

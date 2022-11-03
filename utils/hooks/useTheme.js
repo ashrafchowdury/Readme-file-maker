@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+//Custom Hook for Switching the theme 
 export const useTheme = () => {
   //use for change the theme
   const [mood, setmood] = useState("dark");

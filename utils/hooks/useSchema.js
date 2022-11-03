@@ -1,7 +1,9 @@
 import { useData } from "./useData";
 
+//Custom Hook for Sharing the HTML schema
 export const useSchema = () => {
   const { field, features, tools, align, platforms } = useData();
+  //Convet input values into HTML schemas for Readme.md file
   const schema = `
 ${field.image && `<img src="${field.image}" alt="${field.title}" />`}
 ${

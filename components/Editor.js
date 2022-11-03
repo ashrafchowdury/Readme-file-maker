@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+//UI component
+import { AddIcon, CrossIcon, SideSheet, Button } from "evergreen-ui";
+//Components
+import View from "./View";
 import Align from "./Align";
 import { Input, TextArea, Taginput, Socialinput } from "./Input";
+//Custom Hooks
 import { useData } from "../utils/hooks/useData";
-import { AddIcon, CrossIcon, SideSheet, Button } from "evergreen-ui";
-import View from "./View";
 import { useDisplay } from "../utils/hooks/useDisplay";
 
 const Editor = () => {
-  const [isShown, setIsShown] = React.useState(false);
+  //this state is for show the sidebase on smaller screen
+  const [isShown, setIsShown] = useState(false);
   const { display } = useDisplay();
   const {
     field,
@@ -18,8 +22,9 @@ const Editor = () => {
     setfeatures,
     platforms,
     setplatforms,
-  } = useData();
+  } = useData(); //get the input data
 
+  //get the input field data
   let value, name;
   const handleChange = (e) => {
     name = e.target.name;
@@ -27,6 +32,7 @@ const Editor = () => {
     setfield({ ...field, [name]: value });
   };
 
+  //remove the social icon
   const handleRemoveSocial = (name) => {
     const update = platforms.filter((val) => {
       return val.name != name;
@@ -34,6 +40,7 @@ const Editor = () => {
     setplatforms(update);
   };
 
+  //make the input field empty
   const handleReset = () => {
     settools([]);
     setfeatures([]);
@@ -54,6 +61,7 @@ const Editor = () => {
         } h-[89vh] overflow-y-auto border-r`}
       >
         <nav className=" w-full h-[70px] px-3 lg:px-8 border-b flex items-center justify-between">
+          {/*Condition for showing the Reset button*/}
           {field.title || field.image ? (
             <p
               className=" cursor-pointer font-medium flex items-center"
@@ -67,6 +75,8 @@ const Editor = () => {
 
           <Align />
         </nav>
+
+        {/*Input Fields*/}
         <section className="  flex-col items-center justify-center space-y-10 py-5 px-3 lg:p-8">
           <Input
             title="Image URL"
@@ -124,9 +134,13 @@ const Editor = () => {
 
           <Socialinput />
           <div className=" flex flex-wrap items-center flex-start">
+            {/*Loop the Social data*/}
             {platforms.map((val, ind) => {
               return (
-                <div className=" m-1 lg:m-2 w-[90px] lg:w-28 h-20 lg:h-24 rounded border flex flex-col items-center justify-center relative overflow-hidden" key={ind}>
+                <div
+                  className=" m-1 lg:m-2 w-[90px] lg:w-28 h-20 lg:h-24 rounded border flex flex-col items-center justify-center relative overflow-hidden"
+                  key={ind}
+                >
                   <AddIcon
                     size={20}
                     onClick={() => handleRemoveSocial(val.name)}
@@ -142,6 +156,8 @@ const Editor = () => {
             })}
           </div>
 
+          {/*Condition for showing the sidebar*/}
+          {/*The sidebar is only show on the smaller screens*/}
           {display == false && (
             <>
               <SideSheet

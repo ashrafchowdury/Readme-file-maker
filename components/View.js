@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Button } from "evergreen-ui";
+//Components
 import Preview from "./Preview";
 import Raw from "./Raw";
-import { useSchema } from "../utils/hooks/useSchema";
+//functions
 import { downloadFile } from "../utils/functions/download";
+//Custom Hooks
 import { useData } from "../utils/hooks/useData";
 import { useDisplay } from "../utils/hooks/useDisplay";
+import { useSchema } from "../utils/hooks/useSchema";
 
 const View = () => {
   const [view, setview] = useState("preview");
@@ -35,6 +38,7 @@ const View = () => {
             raw
           </Button>
         </div>
+        {/*Condition for showing the Download button*/}
         {(field.title || field.image) && (
           <Button
             marginRight={16}
@@ -46,6 +50,7 @@ const View = () => {
           </Button>
         )}
       </nav>
+      {/*Condition for showing Raw and the Preview component*/}
       {view == "preview" ? <Preview /> : <Raw schema={schema} />}
     </article>
   );

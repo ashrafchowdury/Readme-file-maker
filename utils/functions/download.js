@@ -1,5 +1,6 @@
 import { toaster } from "evergreen-ui";
-//download file
+
+//function for download the file
 export const downloadFile = (schema) => {
   try {
     const a = document.createElement("a");

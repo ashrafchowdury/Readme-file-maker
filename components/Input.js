@@ -1,3 +1,4 @@
+//UI component
 import {
   TextInput,
   Textarea,
@@ -6,18 +7,27 @@ import {
   toaster,
   Button,
 } from "evergreen-ui";
+//Custom Hooks
 import { useData } from "../utils/hooks/useData";
 
-export const Input = ({ name, place, title, size, change, value }) => {
+/*
+name = input filed name
+place = placeholder
+title = filed name
+change = call the onChange function
+value = input filed value
+setvalue = retrive the value from the input field
+*/
+
+//Normal Input field
+export const Input = ({ name, place, title, change, value }) => {
   return (
-    <div className={`${!size ? "w-full" : "w-[50%]"}`}>
+    <div className="w-full">
       <p className=" text-sm md:text-[16px] lg:text-lg mb-2 font-medium">
         {title}
       </p>
       <TextInput
-        className={`${
-          !size ? "!w-full" : "!w-[50%]"
-        } !h-[40px] md:!h-[45px] lg:!h-[50px] !px-5 !text-sm lg:!text-[16px]`}
+        className="!w-full !h-[40px] md:!h-[45px] lg:!h-[50px] !px-5 !text-sm lg:!text-[16px]"
         name={name}
         placeholder={place}
         onChange={change}
@@ -27,6 +37,7 @@ export const Input = ({ name, place, title, size, change, value }) => {
   );
 };
 
+//Text area field
 export const TextArea = ({ name, title, change, place, value }) => {
   return (
     <>
@@ -44,6 +55,7 @@ export const TextArea = ({ name, title, change, place, value }) => {
   );
 };
 
+//Tag Input field
 export const Taginput = ({ title, place, value, setvalue }) => {
   return (
     <>
@@ -62,23 +74,30 @@ export const Taginput = ({ title, place, value, setvalue }) => {
   );
 };
 
+//Social Input field
 export const Socialinput = () => {
-  const { social, setsocial, platforms, setplatforms } = useData();
+  const { social, setsocial, platforms, setplatforms } = useData(); //get the input data
+  //get the input field data
   let value, name;
   const handleSocial = (e) => {
     name = e.target.name;
     value = e.target.value;
     setsocial({ ...social, [name]: value });
   };
+
+  //Submit the data
   const handleSubmit = (e) => {
     e.preventDefault();
+    //If the input field is empty then show the alert component
     if (!social.platform && !social.link) {
       toaster.warning("Filup All the Fields");
     } else {
+      //send the input data on the platforms state
       setplatforms([
         ...platforms,
         { name: social.platform, link: social.link },
       ]);
+      //make the social field empty
       setsocial({
         platform: "",
         link: "",

@@ -1,9 +1,11 @@
 import React, { useState, createContext, useContext } from "react";
 
+
+//Custom Hook for storing data
 export const DataContext = createContext();
 export const useData = () => useContext(DataContext);
-
 const DataContextProvider = ({ children }) => {
+  //states for storing the input data
   const [tools, settools] = useState([]);
   const [features, setfeatures] = useState([]);
   const [social, setsocial] = useState({
