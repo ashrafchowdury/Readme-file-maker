@@ -25,12 +25,13 @@ const Preview = () => {
         <>
           <h2>🏗️ Use To Build</h2>
           <div className="line"></div>
-          {tools?.map((val) => {
+          {tools?.map((val, ind) => {
             return (
               <a
                 href="https://github.com/"
                 target="_blank"
                 className=" m-2 inline-block"
+                key={ind}
               >
                 <img
                   src={`${`https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/${val.toLowerCase()}-colored.svg`}`}
@@ -48,8 +49,8 @@ const Preview = () => {
         <>
           <h2>🚀 Features</h2>
           <div className="line"></div>
-          {features.map((value) => {
-            return <li>{value}</li>;
+          {features.map((value, ind) => {
+            return <li key={ind}>{value}</li>;
           })}
         </>
       )}
@@ -70,9 +71,9 @@ const Preview = () => {
         <>
           <h2>🔗 Social Medias</h2>
           <div className="line"></div>
-          {platforms.map((val) => {
+          {platforms.map((val, ind) => {
             return (
-              <a href={val.link} target="_blank" className=" m-2 inline-block">
+              <a href={val.link} target="_blank" className=" m-2 inline-block" key={ind}>
                 <img
                   src={`https://img.icons8.com/color/144/${val.name.toLowerCase()}`}
                   width="50px"

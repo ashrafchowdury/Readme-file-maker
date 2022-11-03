@@ -124,9 +124,9 @@ const Editor = () => {
 
           <Socialinput />
           <div className=" flex flex-wrap items-center flex-start">
-            {platforms.map((val) => {
+            {platforms.map((val, ind) => {
               return (
-                <div className=" m-1 lg:m-2 w-[90px] lg:w-28 h-20 lg:h-24 rounded border flex flex-col items-center justify-center relative overflow-hidden">
+                <div className=" m-1 lg:m-2 w-[90px] lg:w-28 h-20 lg:h-24 rounded border flex flex-col items-center justify-center relative overflow-hidden" key={ind}>
                   <AddIcon
                     size={20}
                     onClick={() => handleRemoveSocial(val.name)}

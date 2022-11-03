@@ -8,7 +8,7 @@ const Raw = ({ schema }) => {
   return (
     <section className="relative w-full break-words h-[82vh] overflow-y-auto">
       <div className=" absolute top-7 right-6">
-        <Button className=" !py-4 !px-2 lg:py-5 lg:!px-3" onClick={handleCopy}>
+        <Button className=" !py-4 !px-2 lg:!py-5 lg:!px-3" onClick={handleCopy}>
           <DuplicateIcon className=" text-[14px] lg:text-lg" />
         </Button>
       </div>
