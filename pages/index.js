@@ -4,6 +4,7 @@ import Editor from "../components/Editor";
 import View from "../components/View";
 import { useData } from "../utils/hooks/useData";
 import { useDisplay } from "../utils/hooks/useDisplay";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const { field } = useData();
@@ -24,6 +25,7 @@ export default function Home() {
         <Editor />
         {display && <View />}
       </main>
+      <Footer />
     </>
-  );
+  )
 }

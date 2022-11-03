@@ -20,7 +20,7 @@
     @apply font-['Lexend_Deca'];
   }
   body {
-    @apply overflow-hidden;
+    @apply overflow-x-hidden;
   }
   input,
   textarea {
