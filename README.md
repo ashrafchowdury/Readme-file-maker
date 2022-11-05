@@ -1,34 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="https://firebasestorage.googleapis.com/v0/b/next-firebase-857d1.appspot.com/o/create-readme.png?alt=media&token=9de80e7f-5108-45cc-88e6-ddcd95b39313" alt="Readme File Maker" />
 
-## Getting Started
+<a href="https://readme-file-maker.vercel.app" target="_blank">
+<h1 align="left">Readme File Maker</h1>
+</a>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<p align="left">Create-Readme is an application that will help you to make Readme files for your projects very quickly. It has a simple interface where you can create your Reade file in just a few seconds. </p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<br />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<h2 align="left">🏗️ Use To Build</h2>
+<div align="left">
 
-## Learn More
+<a href="https://github.com/" target="_blank">
+<img
+  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg"
+  width="50px"
+/>
+</a>&nbsp
 
-To learn more about Next.js, take a look at the following resources:
+<a href="https://github.com/" target="_blank">
+<img
+  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored.svg"
+  width="50px"
+/>
+</a>&nbsp
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<a href="https://github.com/" target="_blank">
+<img
+  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg"
+  width="50px"
+/>
+</a>&nbsp
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<a href="https://github.com/" target="_blank">
+<img
+  src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg"
+  width="50px"
+/>
+</a>&nbsp
 
-## Deploy on Vercel
+</div>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br />
+
+
+<h2 align="left">🚀 Features</h2>
+<ul align="left">
+<li>Fully Responsive</li><li>Download Readme File</li><li>Copy Code</li><li>Content Alignment</li>
+</ul>
+
+
+<br />
+
+
+<h2 align="left">👦 About Me</h2>
+<p align="left">I'm Ashraf Chowdury. I'm a Front-end developer. I've been coding for nearly 2.5 years. I'm a developer who loves building full-stack applications & learning new technologies. I've also helped people develop their web apps. I've been working with React.js for over a year now and I feel like I am just scratching the surface of what it can do. My goal is to be able to build applications that are fast responsive and fun to use.</p>
+
+
+<br />
+
+
+<h2 align="left">🔗 Social Medias</h2>
+<div align="left">
+
+<a href="https://twitter.com/Ashraf_365" target="_blank">
+<img
+  src="https://img.icons8.com/color/144/twitter"
+  width="50px"
+/>
+</a>&nbsp
+
+<a href="https://www.linkedin.com/in/ashraf-chowdury-297301206/" target="_blank">
+<img
+  src="https://img.icons8.com/color/144/linkedin"
+  width="50px"
+/>
+</a>&nbsp
+
+<a href="https://ashrafchowdury09.hashnode.dev/" target="_blank">
+<img
+  src="https://img.icons8.com/color/144/hashnode"
+  width="50px"
+/>
+</a>&nbsp
+
+
+
