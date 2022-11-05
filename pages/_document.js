@@ -28,12 +28,8 @@ export default function Document() {
 
         {/**FavIcon */}
 
-        <link rel="apple-touch-icon" href="assets/icon-96x96.png" />
-        <link
-          rel="shortcut icon"
-          href="assets/icon-96x96.png"
-          type="image/x-icon"
-        />
+        <link rel="apple-touch-icon" href="assets/fav.png" />
+        <link rel="shortcut icon" href="assets/fav.png" type="image/x-icon" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <body>

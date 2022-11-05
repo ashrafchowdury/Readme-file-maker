@@ -11,7 +11,6 @@
   "dependencies": {
     "evergreen-ui": "^6.10.5",
     "next": "12.3.1",
-    "next-pwa": "^5.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
